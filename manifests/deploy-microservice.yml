@@ -74,13 +74,13 @@ kind: Ingress
 metadata:
     annotations:
         nginx.ingress.kubernetes.io/rewrite-target: /$2
-    name: matti-solo
+    name: gone-phishing
     namespace: microservices
 spec:
     rules:
         -   http:
                 paths:
-                    -   path: /matti-solo(/|$)(.*)
+                    -   path: /mati-solo(/|$)(.*)
                         backend:
                             serviceName: outdoor-dancing-microservice-service
                             servicePort: 30201
