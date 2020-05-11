@@ -65,3 +65,24 @@ spec:
                             servicePort: 30201
 
 
+
+---
+
+
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+    annotations:
+        nginx.ingress.kubernetes.io/rewrite-target: /$2
+    name: outdoor-dancing-ingress
+    namespace: microservices
+spec:
+    rules:
+        -   http:
+                paths:
+                    -   path: /matti-solo(/|$)(.*)
+                        backend:
+                            serviceName: outdoor-dancing-microservice-service
+                            servicePort: 30201
+
+
